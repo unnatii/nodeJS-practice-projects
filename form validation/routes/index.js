@@ -9,8 +9,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/submit',function(req,res,next){
-	req.check('email','invalid email address').isEmail();
-	req.check('password','invalid password').isLength({min:4}).equals(req.body.confirmPassword);
+	req.check('email','invalid email address!').isEmail();
+	req.check('password','invalid password !').isLength({min:4}).equals(req.body.confirmPassword);
 	var errors=req.validationErrors();
 	if(errors){
 		req.session.errors=errors;
